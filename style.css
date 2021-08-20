@@ -1,0 +1,115 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+/*img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 2fr 4fr 6fr 3fr auto 1fr;
+  grid-template-areas:
+  "h h h h h h h h h h h h"
+  ". . . n n n n n n . . ."
+  ". . . e e e e e e . . ."
+  ". . . o o o o o o . . ."
+  ". . . p p p p p p . . ."
+  ". . . f f f f f f . . .";
+  }
+ 
+.header {
+  display: flex;
+  justify-content:space-between;
+  grid-area: h;
+  background-color: aqua;
+
+}
+.logo {
+  grid-area: logo;
+  align-self: flex-start;
+  margin: 1.5em;
+
+}
+.logo > img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+ }
+
+.menu-items {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+  font-size: large;
+  margin-bottom: 15px;
+}
+
+.menu-items * {
+  margin: 1.5em;
+}
+
+/*email input form, submit*/
+.newsletter {
+  grid-area: n;
+  background-color:blueviolet;
+}
+
+/*3 headlines/paragraphs*/
+.features {
+  background-color:rgb(43, 226, 98);
+  grid-area: e;
+}
+
+/*Video embed*/
+.howitworks {
+  background-color:rgb(226, 43, 180);
+  grid-area: o;
+
+}
+
+/*3 cards*/
+.pricing {
+  background-color:rgb(226, 223, 43);
+  grid-area: p;
+}
+
+.footer {
+  background-color:rgb(45, 42, 48);
+  grid-area: f;
+}
+
+@media screen and (max-width: 745px) {
+  .header {
+    display: flex;
+    flex-direction: column;;
+    grid-area: h;
+    align-items: center;
+  }
+  .logo {
+    align-self: center;
+    margin-top: 0.8em;
+    margin-bottom: -1.5;
+  
+  }
+  .logo > img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+   }
+  
+  .menu-items {
+    align-self: center;
+    margin: -0.7em;
+    margin-top: -2.1em;
+    }
