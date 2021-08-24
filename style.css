@@ -1,266 +1,293 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+/*img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}*/
+h1 {
+  font-size: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(1fr, auto));
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+  "h h h h h h h h h h h h"
+  ". . n n n n n n n n . ."
+  ". . e e e e e e e e . ."
+  ". . o o o o o o o o . ."
+  ". . p p p p p p p p . ."
+  ". . f f f f f f f f . .";
   }
-  *, *::before, *::after {
-    box-sizing: inherit;
-    padding: 0;
-    margin: 0;
+.header {
+  grid-area: h;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "_logo . _menu-items";
+  background-color: aqua;
+}
+.logo {
+  grid-area: logo;
+  grid-area: _logo;
+  margin: 1.5em;
+}
+.logo > img {
+  max-width: 300px;
+  min-width: 300px;
+ }  
+.menu-items {
+  justify-self: end;
+  grid-area: _menu-items;
+  display: flex;
+  align-self: flex-end;
+  font-size: medium;
+  margin-bottom: 34px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.menu-items * {
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+}
+/*email input form, submit*/
+.newsletter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-area: n;
+  background-color:blueviolet;
+  text-align: center;
+  justify-items: center;
+  margin-top: 0.7em;
+}
+.newsletter h1 {
+  padding-top: 0.5em;
+}
+.newsletter form {
+  justify-items: center;
+  margin-left: 4em;
+  margin-right: 4em;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+.newsletter form * {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+.newsletter input {
+  line-height: 1.2em;
+  padding: 0.8em 0.7em 0.7em 0.7em;
+  width: 80%;
+}
+.newsletter button {
+  width: 5.5em;
+  line-height: 1.1em;
+  padding: 0.8em 0.7em 0.7em 0.7em;
+}  
+/*3 headlines/paragraphs*/
+.features {
+  background-color:rgb(43, 226, 98);
+  grid-area: e;
+  display: flex;
+  flex-direction: column;
   }
-  html, body {
-    width: 100%;
-    height: 100%;
-  }
-  /*img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }*/
-  h1 {
-    font-size: 1.5em;
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-  .grid-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas:
-    "h h h h h h h h h h h h"
-    ". . n n n n n n n n . ."
-    ". . e e e e e e e e . ."
-    ". . o o o o o o o o . ."
-    ". . p p p p p p p p . ."
-    ". . f f f f f f f f . .";
+.feature1 {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}  
+.features h2 {
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}
+.feature2 {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}  
+.feature3 {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}  
+.features img {
+  margin-top: 0.5em;
+}  
+.features p {
+  margin-top: 0.2em;
+}  
+.features h2 {
+  margin-bottom: 0.4em;
+}  
+/*Video embed*/
+.howitworks {
+  background-color:rgb(226, 43, 180);
+  grid-area: o;
+  display: flex;
+  justify-content: center;
+}
+/*3 cards*/
+.pricing {
+  background-color:rgb(226, 223, 43);
+  grid-area: p;
+  display: flex;
+}
+.pricing #card1{
+  border-style: solid;
+  background-color:rgb(216, 216, 209);
+  display: flex;
+  flex-direction: column;
+  padding-left: 0em;
+  padding-right: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  text-align: center;
+  justify-content: space-between;
+}
+.pricing #card2{
+  border-style: solid;
+  background-color:rgb(216, 216, 209);
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  text-align: center;
+  justify-content: space-between;
     }
+.pricing #card3{
+  border-style: solid;
+  background-color:rgb(216, 216, 209);
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 0em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  text-align: center;
+  justify-content: space-between;
+}
+.pricing #card1 h3 {
+  text-transform: uppercase;    
+}
+.pricing #card2 h3 {
+  text-transform: uppercase;    
+}
+.pricing #card3 h3 {
+  text-transform: uppercase;    
+}
+.footer {
+  grid-area: f;
+}
+@media screen and (max-width: 854px) {
+  .grid-container {
+    display: grid;
+    /*grid-template-columns: repeat(12, 1fr);*/
+    grid-template-columns: auto;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+    "h"
+    "n"
+    "e"
+    "o"
+    "p"
+    "f";
+    width: 100%;
+  }
   .header {
     grid-area: h;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "_logo . _menu-items";
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
   .logo {
-    grid-area: logo;
-    grid-area: _logo;
-    margin: 1.5em;
-  
+    text-align: center;
+    align-self: center;
+    margin-top: 1.4em;
+    margin-bottom: -1.5;
+    margin-right: 10%;
   }
   .logo > img {
     width: 100%;
     height: 100%;
     max-width: 300px;
-   }  
+    min-width: 300px;
+   }
   .menu-items {
-    grid-area: _menu-items;
-    display: flex;
-    align-self: flex-end;
-    font-size: large;
-    margin-bottom: 34px;
-  }
-  .menu-items * {
-    margin-left: 0.5em;
-  }
-  /*email input form, submit*/
-  .newsletter {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    grid-area: n;
-    background-color:blueviolet;
     text-align: center;
-    justify-items: center;
-    margin-top: 0.7em;
+    align-self: center;
+    margin-top: 0px;
+
   }
-  .newsletter h1 {
-    padding-top: 0.5em;
-  }
-  .newsletter form {
-    justify-items: center;
-    margin-left: 4em;
-    margin-right: 4em;
-    margin-top: 0.7em;
-    margin-bottom: 0.7em;
-  }
-  .newsletter form * {
-    margin-left: 0.3em;
-    margin-right: 0.3em;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
-  }
-  .newsletter input {
-    line-height: 1.2em;
-    padding: 0.8em 0.7em 0.7em 0.7em;
-    width: 80%;
-  }
-  .newsletter button {
-    width: 5.5em;
-    line-height: 1.1em;
-    padding: 0.8em 0.7em 0.7em 0.7em;
-  }  
-  /*3 headlines/paragraphs*/
-  .features {
-    background-color:rgb(43, 226, 98);
-    grid-area: e;
-    display: flex;
-    flex-direction: column;
-    }
-  .feature1 {
-    width: 98%;
-    display: flex;
-    flex-direction: row;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
-  }  
-  .features h2 {
-    padding-left: 0.8em;
-    padding-right: 0.8em;
-  }
-  .feature2 {
-    width: 98%;
-    display: flex;
-    flex-direction: row;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
-  }  
-  .feature3 {
-    width: 98%;
-    display: flex;
-    flex-direction: row;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
-  }  
-  .features img {
-    margin-top: 0.5em;
-  }  
-  .features p {
-    margin-top: 0.2em;
-  }  
-  .features h2 {
-    margin-bottom: 0.4em;
-  }  
-  /*Video embed*/
-  .howitworks {
-    background-color:rgb(226, 43, 180);
-    grid-area: o;
-    display: flex;
+    /*align-self: center;
+    text-align: center;
+  }*/
+  /*  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "_logo"
+      "_menu-items";
     justify-content: center;
   }
-  /*3 cards*/
+  .logo {
+    justify-self: center;
+    align-self: center;
+    margin-top: 0.8em;
+    margin-bottom: -1.5;
+  }
+  .logo > img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    min-width: 300px;
+   }
+  .menu-items {
+    justify-self: center;
+    }*/
   .pricing {
     background-color:rgb(226, 223, 43);
     grid-area: p;
     display: flex;
-  }
-  .pricing #card1{
-    border-style: solid;
-    background-color:rgb(216, 216, 209);
-    display: flex;
     flex-direction: column;
-    padding-left: 0em;
-    padding-right: 1em;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    text-align: center;
-    justify-content: space-between;
   }
-  .pricing #card2{
-    border-style: solid;
-    background-color:rgb(216, 216, 209);
-    display: flex;
-    flex-direction: column;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    text-align: center;
-    justify-content: space-between;
-      }
-  .pricing #card3{
-    border-style: solid;
-    background-color:rgb(216, 216, 209);
-    display: flex;
-    flex-direction: column;
-    padding-left: 1em;
-    padding-right: 0em;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    text-align: center;
-    justify-content: space-between;
-  }
-  .pricing #card1 h3 {
-    text-transform: uppercase;    
-  }
-  .pricing #card2 h3 {
-    text-transform: uppercase;    
-  }
-  .pricing #card3 h3 {
-    text-transform: uppercase;    
-  }
-
-  .footer {
-    grid-area: footer;
-  }
-  
-  @media screen and (max-width: 769px) {
-    .header {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-      grid-template-rows: 2fr 2fr;
-      grid-template-areas:
-        ". _logo ."
-        ". _menu-items .";
-    }
-  
+/*  @media screen and (max-width: 543px) {
     .logo {
-      align-self:auto;
-      margin-top: 0.8em;
-      margin-bottom: -1.5;
-      margin-left: -3.6em;
-    
+      margin-right: 25vh;
     }
-    .logo > img {
-      width: 100%;
-      height: 100%;
-      max-width: 300px;
-     }
     .menu-items {
-      align-self: center;
-      margin: -0.7em;
-      margin-top: -2.1em;
-      }
-    .grid-container {
-      display: grid;
-      grid-gap: 1em;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(7, auto);
-      grid-template-areas:
-      "h h h h h h h h h h h h"
-      "n n n n n n n n n n n n"
-      "e e e e e e e e e e e e"
-      "o o o o o o o o o o o o"
-      "p p p p p p p p p p p p"
-      "f f f f f f f f f f f f";
-      width: 100%;
-    }
-    .pricing {
-      background-color:rgb(226, 223, 43);
-      grid-area: p;
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media screen and (max-width: 1700px) {
-      .pricing {
-        background-color:rgb(226, 223, 43);
-        grid-area: p;
-        display: flex;
-        flex-direction: column;
-      }
+      margin-right: 14vh;
+    }*/
