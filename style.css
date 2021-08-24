@@ -39,12 +39,13 @@ h1 {
   grid-template-columns: 1fr 0.5fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "_logo . _menu-items";
-  background-color: aqua;
+  align-items: center;
 }
 .logo {
   grid-area: logo;
   grid-area: _logo;
-  margin: 1.5em;
+  margin: 0em;
+  align-content: center;
 }
 .logo > img {
   max-width: 300px;
@@ -57,7 +58,7 @@ h1 {
   align-self: flex-end;
   font-size: medium;
   margin-bottom: 34px;
-  margin-top: 25px;
+  margin-top: 18px;
   margin-left: 25px;
   margin-right: 25px;
 }
@@ -71,13 +72,12 @@ h1 {
   display: flex;
   flex-direction: column;
   grid-area: n;
-  background-color:blueviolet;
   text-align: center;
   justify-items: center;
   margin-top: 0.7em;
 }
 .newsletter h1 {
-  padding-top: 0.5em;
+  padding-top: 0em;
 }
 .newsletter form {
   justify-items: center;
@@ -99,15 +99,17 @@ h1 {
 }
 .newsletter button {
   width: 5.5em;
-  line-height: 1.1em;
+  line-height: 1em;
   padding: 0.8em 0.7em 0.7em 0.7em;
 }  
 /*3 headlines/paragraphs*/
 .features {
-  background-color:rgb(43, 226, 98);
+  margin-left: 15px;
   grid-area: e;
   display: flex;
   flex-direction: column;
+  align-self: center;
+  justify-content: center;
   }
 .feature1 {
   width: 98%;
@@ -142,61 +144,55 @@ h1 {
 }  
 .features img {
   margin-top: 0.5em;
+  align-self: center;
 }  
 .features p {
   margin-top: 0.2em;
-}  
+  align-self: center;
+}
 .features h2 {
   margin-bottom: 0.4em;
+  align-self: center;
+  margin-top: 10px;
+  margin-left: 15px;
+
 }  
 /*Video embed*/
 .howitworks {
-  background-color:rgb(226, 43, 180);
+  margin-top: 20px;
+  margin-bottom: 20px;
   grid-area: o;
   display: flex;
   justify-content: center;
 }
 /*3 cards*/
 .pricing {
-  background-color:rgb(226, 223, 43);
   grid-area: p;
   display: flex;
-}
-.pricing #card1{
-  border-style: solid;
-  background-color:rgb(216, 216, 209);
-  display: flex;
-  flex-direction: column;
-  padding-left: 0em;
-  padding-right: 1em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-content:space-between;
   text-align: center;
-  justify-content: space-between;
 }
-.pricing #card2{
-  border-style: solid;
-  background-color:rgb(216, 216, 209);
-  display: flex;
-  flex-direction: column;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+.pricing * button {
+  padding-bottom: 15px;
+  padding-top: 15px;
   text-align: center;
-  justify-content: space-between;
-    }
+}
+.pricing * h3 {
+  padding-top: 15px;
+  text-align: center;
+}
+.pricing * p {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
 .pricing #card3{
-  border-style: solid;
-  background-color:rgb(216, 216, 209);
   display: flex;
   flex-direction: column;
-  padding-left: 1em;
-  padding-right: 0em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  text-align: center;
-  justify-content: space-between;
 }
 .pricing #card1 h3 {
   text-transform: uppercase;    
@@ -207,7 +203,14 @@ h1 {
 .pricing #card3 h3 {
   text-transform: uppercase;    
 }
+.pricing button {
+  width: 50%;
+  align-self: center;
+  justify-self: center;
+}
 .footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
   grid-area: f;
 }
 @media screen and (max-width: 854px) {
@@ -248,7 +251,7 @@ h1 {
   .menu-items {
     text-align: center;
     align-self: center;
-    margin-top: 0px;
+    margin-top: 14px;
 
   }
     /*align-self: center;
@@ -279,11 +282,15 @@ h1 {
     justify-self: center;
     }*/
   .pricing {
-    background-color:rgb(226, 223, 43);
     grid-area: p;
     display: flex;
     flex-direction: column;
+    
   }
+  .pricing button {
+    width: 25%;
+  }
+  
 /*  @media screen and (max-width: 543px) {
     .logo {
       margin-right: 25vh;
