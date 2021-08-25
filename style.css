@@ -9,7 +9,8 @@ html {
 html, body {
   width: 100%;
   height: 100%;
-}
+  font-family: 'Merriweather', serif;
+  font-family: 'Raleway', sans-serif;}
 /*img {
   max-width: 100%;
   height: auto;
@@ -32,15 +33,31 @@ h1 {
   ". . o o o o o o o o . ."
   ". . p p p p p p p p . ."
   ". . f f f f f f f f . .";
+  margin-top: 75px;
   }
 .header {
+  position: fixed;
+  top: 0;
+  min-height: 75px;
   grid-area: h;
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "_logo . _menu-items";
   align-items: center;
+  background-color: whitesmoke;
+  width: 100%;
 }
+/*header {
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+}*/
 .logo {
   grid-area: logo;
   grid-area: _logo;
@@ -74,7 +91,7 @@ h1 {
   grid-area: n;
   text-align: center;
   justify-items: center;
-  margin-top: 0.7em;
+  margin-top: 0.1em;
 }
 .newsletter h1 {
   padding-top: 0em;
@@ -83,7 +100,7 @@ h1 {
   justify-items: center;
   margin-left: 4em;
   margin-right: 4em;
-  margin-top: 0.7em;
+  margin-top: 0.2em;
   margin-bottom: 0.7em;
 }
 .newsletter form * {
@@ -97,7 +114,7 @@ h1 {
   padding: 0.8em 0.7em 0.7em 0.7em;
   width: calc(100% / 3);
 }
-.newsletter button {
+.newsletter #submit {
   width: 5.5em;
   line-height: 1em;
   padding: 0.8em 0.7em 0.7em 0.7em;
@@ -181,12 +198,13 @@ h1 {
   padding-bottom: 15px;
   padding-top: 15px;
   text-align: center;
-  background-color: #F5DF4C;
+  background-color: #F9FF00;
   border-width: 0.5px;
   width: calc(100% / 3);
   margin: 10px;
   border: 1px solid #000;
   border-radius: 3px;
+  border-color: #7F7F7F;
 }
 .pricing * h3 {
   padding-top: 15px;
@@ -219,7 +237,11 @@ h1 {
   margin-top: 15px;
   margin-bottom: 15px;
   grid-area: f;
+  display: flex;
+  flex-direction: column;
 }
+.footer #footer-links {display: flex; justify-content: space-between; margin-right:15px; margin-left: 15px;}
+.footer #copyright-notice  {margin-left: 15px; margin-right:15px; margin-bottom: 5px; margin-top: 5px;}
 @media screen and (max-width: 854px) {
   .grid-container {
     display: grid;
@@ -234,7 +256,8 @@ h1 {
     "p"
     "f";
     width: 100%;
-  }
+    margin-top: 125px;
+  }  
   .header {
     grid-area: h;
     display: flex;
